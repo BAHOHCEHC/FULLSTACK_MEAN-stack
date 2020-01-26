@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const passport = require('passport');
 const keys = require('./config/keys');
 const cors = require('cors'); //что бы сервер мог обрабатывать CORS запросы независимо от домена на котором находиться клиент
 const morgan = require('morgan'); //для красивого логирования запросов
@@ -19,6 +20,10 @@ mongoose
   .catch(error => {
     console.log('********', error);
   });
+
+app.use(passport.initialize())
+require('./middleware/passport')(passport)
+
 app.use(morgan('dev'));
 app.use(cors());
 
