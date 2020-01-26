@@ -8,7 +8,6 @@ const User = require('../models/User');
 module.exports.login = async (req, res) => {
 	// login
 	const candidate = await User.findOne({ email: req.body.email });
-
 	if (candidate) {
 		// if user exist throw error
 		const passwordResult = bcrypt.compareSync(req.body.password, candidate.password);

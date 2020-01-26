@@ -13,22 +13,24 @@ const orderRoutes = require('./routes/order');
 const positionRoutes = require('./routes/position');
 
 mongoose
-  .connect(keys.mongoURI)
-  .then(() => {
-    console.log('****MONGO CONECTED****');
-  })
-  .catch(error => {
-    console.log('********', error);
-  });
+	.connect(keys.mongoURI)
+	.then(() => {
+		console.log('****MONGO CONECTED****');
+	})
+	.catch(error => {
+		console.log('********', error);
+	});
 
-app.use(passport.initialize())
-require('./middleware/passport')(passport)
+app.use(passport.initialize());
+require('./middleware/passport')(passport);
 
 app.use(morgan('dev'));
-app.use(cors());
+app.use('/uploads', express.static('uploads'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors());
+// app.use(require('cors')());
 app.use('/api/auth', authRoutes);
 app.use('/api/analytic', analyticRoutes);
 app.use('/api/category', categoryRoutes);
