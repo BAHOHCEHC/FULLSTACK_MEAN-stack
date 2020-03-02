@@ -25,6 +25,7 @@ module.exports.create = async (req, res) => {
 		errorHandler(res, error);
 	}
 };
+
 module.exports.remove = async (req, res) => {
 	try {
 		await Position.remove({ _id: req.params.id });
@@ -33,6 +34,7 @@ module.exports.remove = async (req, res) => {
 		errorHandler(res, error);
 	}
 };
+
 module.exports.update = async (req, res) => {
 	try {
 		const position = await Position.findOneAndUpdate(
