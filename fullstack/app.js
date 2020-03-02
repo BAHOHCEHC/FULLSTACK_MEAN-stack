@@ -13,12 +13,12 @@ const orderRoutes = require('./routes/order');
 const positionRoutes = require('./routes/position');
 
 mongoose
-	.connect(keys.mongoURI)
+	.connect(keys.mongoURI, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
 	.then(() => {
 		console.log('****MONGO CONECTED****');
 	})
 	.catch(error => {
-		console.log('********', error);
+		console.log('*****ERROR***', error);
 	});
 
 app.use(passport.initialize());
