@@ -3,8 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../shared/services/auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { User } from '../shared/services/interfaces';
 import { MaterialService } from '../shared/classes/material.service';
+import { User } from '../shared/interfaces';
 
 @Component({
   selector: 'app-register-page',

@@ -2,10 +2,10 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { AuthService } from './../shared/services/auth.service';
-import { User } from '../shared/services/interfaces';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { MaterialService } from '../shared/classes/material.service';
+import { User } from '../shared/interfaces';
 
 @Component({
   selector: 'app-login-page',
@@ -45,7 +45,6 @@ export class LoginPageComponent implements OnInit, OnDestroy {
         MaterialService.toast('Can not login');
       } else if (params.sessionFailed) {
         // Can not login
-
         MaterialService.toast('SessionFailed');
       }
     });
@@ -64,7 +63,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
     this.aSub = this.auth.login(user).subscribe(
       () => {
         this.form.reset();
-        // this.router.navigate(['/admin', 'dashboard']);     // напрввлние на компонент
+        this.router.navigate(['/overview']);   // напрввлние на компонент
       },
       ({ error }) => {
         MaterialService.toast(error.message);
