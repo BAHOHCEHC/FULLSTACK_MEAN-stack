@@ -33,7 +33,7 @@ module.exports.create = async (req, res) => {
 	const category = await new Category({
 		name: req.body.name,
 		user: req.user.id,
-		imageSRC: req.file ? req.file.path : ''
+		imageSrc: req.file ? req.file.path : ''
 	});
 	try {
 		category.save();
@@ -47,7 +47,7 @@ module.exports.update = async (req, res) => {
 		name: req.body.name
 	};
 	if (req.file) {
-		updated.imageSRC = req.file.path;
+		updated.imageSrc = req.file.path;
 	}
 
 	try {
