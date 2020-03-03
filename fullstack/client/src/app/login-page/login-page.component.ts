@@ -45,6 +45,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
         MaterialService.toast('Can not login');
       } else if (params.sessionFailed) {
         // Can not login
+
         MaterialService.toast('SessionFailed');
       }
     });
