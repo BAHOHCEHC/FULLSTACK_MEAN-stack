@@ -30,7 +30,7 @@ export class OrderPageComponent implements OnInit, OnDestroy, AfterViewInit {
 
   constructor(
     private router: Router,
-    private order: OrderService,
+    public order: OrderService,
     private ordersService: OrdersService
   ) {}
 
