@@ -14,7 +14,6 @@
   "dependencies": {
     "@angular/cli": "^9.0.5",
     "@angular/compiler-cli": "^9.0.5",
-    "typescript": "~3.7.5",
     "@angular/animations": "~9.0.3",
     "@angular/common": "~9.0.3",
     "@angular/compiler": "~9.0.3",
@@ -27,6 +26,7 @@
     "chart.js": "^2.7.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
+    "typescript": "~3.7.5",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
