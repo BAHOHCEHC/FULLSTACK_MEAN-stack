@@ -8,12 +8,7 @@
     "fix": "npm audit fix",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod"
-  },
-    "engines": {
-    "node": "12.16.1",
-    "npm": "6.13.4"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
